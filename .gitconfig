@@ -1,0 +1,22 @@
+[include]
+    path = ~/.user.gitconfig
+[commit]
+    verbose = true
+    gpgsign = true
+[includeIf "gitdir/i:Uni/"]
+    path = ~/.uni.gitconfig
+[pager]
+    show = delta
+[delta]
+    side-by-side = true
+[diff]
+    show = delta
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+[core]
+    editor = nvim
+[init]
+    defaultBranch = main
