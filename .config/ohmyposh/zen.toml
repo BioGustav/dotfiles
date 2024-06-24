@@ -14,7 +14,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     background = 'transparent'
     foreground = 'blue'
-    template = '{{ .Path }}'
+    template = '{{ path .Path .Location }}'
 
     [blocks.segments.properties]
       style = 'full'
@@ -24,12 +24,12 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     style = 'plain'
     foreground = 'p:grey'
     background = 'transparent'
-    template = ' {{ .HEAD }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
-
+    template = ' {{ if not .UpstreamGone }}{{ $link := print .UpstreamURL "/tree/" .Ref }}{{ url .HEAD $link }}{{ else }}{{ .HEAD }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
     [blocks.segments.properties]
       branch_icon = ''
       commit_icon = '@'
       fetch_status = true
+      fetch_upstream_icon = true
 
 [[blocks]]
   type = 'rprompt'

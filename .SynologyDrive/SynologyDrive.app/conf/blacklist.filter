@@ -5,7 +5,7 @@ minor = 1
 [File]
 black_ext_selective_sync = "tmp", "temp", "swp", "lnk", "pst"
 max_size_selective_sync = 0
-black_suffix = ".lock", "-lock.json"
+black_suffix = ".lock", "-lock.json", ".bak"
 
 [Directory]
-black_name = "out", "node_modules", "build", "__MACOSX"
+black_name = "out", "node_modules", "build", "__MACOSX", "*.bak"

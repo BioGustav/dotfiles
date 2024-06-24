@@ -4,6 +4,7 @@ alias ls="ls --color"
 alias l="ls -lAh"
 alias z="zoxide query"
 alias compress="xargs -P0 -I % tar -czf %.tar.gz %"
+alias stow="stow -d ~/dotfiles/ ."
 
 # dnf
 alias dnfs="dnf search"
