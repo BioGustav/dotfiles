@@ -21,12 +21,12 @@ live_config_reload = true
     x = 0
     y = 0
 
-#[colors]
+[colors]
     #draw_bold_text_with_bright_colors = true
 
-    #[colors.primary]
+    [colors.primary]
     #foreground = "#c5c8c6"
-    #background = "#1d2021"
+    background = "#000000"
 
 [env]
     TERM = "alacritty"
