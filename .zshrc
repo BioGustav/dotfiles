@@ -68,7 +68,7 @@ fi
 
 # Completion styling
 #
-source /usr/share/fzf/shell/key-bindings.zsh
+source /usr/share/fzf/key-bindings.zsh
 eval "$(zoxide init --cmd cd zsh)"
 export SUDO_ASKPASS='/usr/lib/ssh/x11-ssh-askpass'
 
