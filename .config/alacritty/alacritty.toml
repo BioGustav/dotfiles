@@ -1,7 +1,3 @@
-import = ["~/.config/alacritty/themes/breeze.toml"]
-
-live_config_reload = true
-
 [font]
     builtin_box_drawing = true
     size = 12
@@ -21,18 +17,20 @@ live_config_reload = true
     x = 0
     y = 0
 
-[colors]
-    #draw_bold_text_with_bright_colors = true
 
-    [colors.primary]
-    #foreground = "#c5c8c6"
-    background = "#000000"
+[colors]
+	draw_bold_text_with_bright_colors = true
+	transparent_background_colors = true
+
+	[colors.primary]
+	background = '#000000'
 
 [env]
-    TERM = "alacritty"
+    TERM = "xterm-256color"
 
-[shell]
+[terminal.shell]
     program = "/bin/zsh"
+#args = ["-l", "-c", "tmux attach || tmux"]
 
 [window]
     opacity = 0.85
@@ -46,3 +44,9 @@ live_config_reload = true
 
 [selection]
     semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[general]
+    live_config_reload = true
+    import = ["~/.config/alacritty/themes/breeze.toml"]
+
+[terminal]

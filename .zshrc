@@ -21,6 +21,7 @@ autoload -Uz compinit && compinit
 zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+export PATH=$HOME/.local/bin:$PATH
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # key-bindings
@@ -72,4 +73,3 @@ source /usr/share/fzf/key-bindings.zsh
 eval "$(zoxide init --cmd cd zsh)"
 export SUDO_ASKPASS='/usr/lib/ssh/x11-ssh-askpass'
 
-export PATH=$HOME/.local/bin:$PATH
