@@ -1,0 +1,52 @@
+[font]
+    builtin_box_drawing = true
+    size = 12
+
+    [font.normal]
+    family = "Adwaita Mono"
+    style = "Regular"
+
+    [font.bold]
+    family = "Adwaita Mono"
+    style = "Bold"
+
+    [font.italic]
+    family = "Adwaita Mono"
+
+    [font.offset]
+    x = 0
+    y = 0
+
+
+[colors]
+	draw_bold_text_with_bright_colors = true
+	transparent_background_colors = true
+
+	[colors.primary]
+	background = '#000000'
+
+[env]
+    TERM = "xterm-256color"
+
+[terminal.shell]
+    program = "/bin/zsh"
+#args = ["-l", "-c", "tmux attach || tmux"]
+
+[window]
+    opacity = 0.85
+    decorations = "full"
+    dynamic_title = true
+    #startup_mode = "Maximized"
+
+    [window.dimensions]
+    columns = 130
+    lines = 35
+
+[selection]
+    semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[general]
+    live_config_reload = true
+    import = ["~/.config/alacritty/themes/breeze.toml"]
+
+[terminal]
