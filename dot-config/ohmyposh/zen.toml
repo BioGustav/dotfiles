@@ -17,6 +17,7 @@ final_space = true
   type = 'prompt'
   alignment = 'left'
   newline = true
+  
 
   [[blocks.segments]]
     template = '{{ path .Path .Location }}'
@@ -29,19 +30,44 @@ final_space = true
       cache_duration = 'none'
       style = 'full'
 
+#  [[blocks.segments]]
+#    type = 'command'
+#    stype = 'plain'
+#    template = '{{ $link := print .Output "/tree/" "main" }}{{ url "main" $link }}'
+#
+#    [blocks.segments.properties]
+#      shell = 'bash'
+#      command = 'git config --get remote.origin.url'
+
   [[blocks.segments]]
-    template = ' {{ if not .UpstreamGone }}{{ $link := print .UpstreamURL "/tree/" .Ref }}{{ url .HEAD $link }}{{ else }}{{ .HEAD }}{{ end }}{{ if or (.Working.Changed) (.Staging.Changed) }}*{{ end }} <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}</>'
-    foreground = 'p:grey'
-    background = 'transparent'
+    # git
     type = 'git'
     style = 'plain'
-
+    background = 'transparent'
+    template = '{{$upstream := .UpstreamURL}}{{$remotes := join "," .Commit.Refs.Remotes}}{{range .Commit.Refs.Heads}} {{if contains . $remotes}}{{$link := print $upstream "/tree/" .}}{{url . $link }}{{else}}<darkGray>{{.}}</>{{end}}{{end}}'
+    
     [blocks.segments.properties]
+      fetch_upstream_icon = true
+      fetch_status = true
       branch_icon = ''
       cache_duration = 'none'
       commit_icon = '@'
-      fetch_status = true
-      fetch_upstream_icon = true
+
+  [[blocks.segments]]
+    # {{ if not .UpstreamGone }}{{ $link := print .UpstreamURL "/tree/" .Ref }}{{ url .HEAD $link }}{{ else }}{{ .HEAD }}{{ end }}
+    # <cyan>{{ if gt .Behind 0 }}⇣{{ end }}{{ if gt .Ahead 0 }}⇡{{ end }}
+    type = 'jujutsu'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'magenta'
+    template = ' @{{ .ChangeID }}<cyan>{{ if .Working.Changed }} {{ .Working.String }}{{ end }}</>'
+
+    [blocks.segments.properties]
+      change_id_min_len = 0
+      fetch_status = true 
+      ignore_working_copy = true
+      native_fallback = false
+      status_formats = true
 
 [[blocks]]
   type = 'rprompt'
