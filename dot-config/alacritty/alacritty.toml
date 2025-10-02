@@ -3,16 +3,15 @@
     size = 12
 
     [font.normal]
-    family = "Adwaita Mono"
+    family = "Roboto Mono Nerd Font Mono"
     style = "Regular"
 
     [font.bold]
-    family = "Adwaita Mono"
+    family = "Roboto Mono Nerd Font Mono"
     style = "Bold"
 
     [font.italic]
-    family = "Adwaita Mono"
-
+    family = "Roboto Mono Nerd Font Mono"
     [font.offset]
     x = 0
     y = 0
