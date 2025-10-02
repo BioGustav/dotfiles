@@ -8,4 +8,4 @@ max_size_selective_sync = 0
 black_suffix = ".lock", "-lock.json", ".bak"
 
 [Directory]
-black_name = "out", "node_modules", "build", "__MACOSX", "*.bak"
+black_name = "out", "node_modules", "build", "__MACOSX", "*.bak", ".git", ".jj"
