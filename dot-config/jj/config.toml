@@ -6,7 +6,7 @@ email = "65023470+BioGustav@users.noreply.github.com"
 
 [ui]
 default-command = ["log", "--reversed"]
-editor = "vim"
+editor = "nvim"
 
 [signing]
 behavior = "drop"

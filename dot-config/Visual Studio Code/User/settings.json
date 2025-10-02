@@ -1,0 +1,8 @@
+{
+    "workbench.activityBar.location": "bottom",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "telemetry.feedback.enabled": false,
+    "extensions.experimental.affinity": {
+        "asvetliakov.vscode-neovim": 1
+    }
+}
