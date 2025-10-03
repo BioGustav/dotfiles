@@ -4,18 +4,20 @@ This directory contains the dotfiles for my system
 
 ## Requirements
 
-Ensure you have the following installed on your system
+Ensure you have the following packages installed on your system:
+* git
+* stow
 
-### Git
-
-```
-dnf install git
-```
-
-### Stow
+### Fedora / RHEL
 
 ```
-dnf install stow
+sudo dnf install git stow
+```
+
+### Arch (btw)
+
+```
+sudo pacman -S --needed git stow
 ```
 
 ## Installation
