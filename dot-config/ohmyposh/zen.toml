@@ -44,7 +44,7 @@ final_space = true
     type = 'git'
     style = 'plain'
     background = 'transparent'
-    template = '{{$upstream := .UpstreamURL}}{{$remotes := join "," .Commit.Refs.Remotes}}{{range .Commit.Refs.Heads}} {{if contains . $remotes}}{{$link := print $upstream "/tree/" .}}{{url . $link }}{{else}}<darkGray>{{.}}</>{{end}}{{end}}'
+    template = '{{$upstream := .UpstreamURL}}{{$remotes := join "," .Commit.Refs.Remotes}}{{$icon := .UpstreamIcon}}{{range .Commit.Refs.Heads}} {{if contains . $remotes}}{{$name := print $icon "/" .}}{{$link := print $upstream "/tree/" .}}{{url $name $link }}{{else}}<darkGray>{{.}}</>{{end}}{{end}}'
     
     [blocks.segments.properties]
       fetch_upstream_icon = true
@@ -68,6 +68,15 @@ final_space = true
       ignore_working_copy = true
       native_fallback = false
       status_formats = true
+
+  [[blocks.segments]]
+    type = "python"
+    style = "plain"
+    foreground = "green"
+    background = "transparent"
+    template = " [{{.Full}}]"
+    [blocks.segments.properties]
+      fetch_version = true
 
 [[blocks]]
   type = 'rprompt'
