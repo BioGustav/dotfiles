@@ -1,0 +1,6 @@
+*
+!/SynologyDrive.app
+/SynologyDrive.app/*
+!/SynologyDrive.app/conf
+/SynologyDrive.app/conf/blacklist.filter
+/SynologyDrive.app/conf/whitelist.filter
