@@ -25,6 +25,9 @@ zinit cdreplay -q
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 export PATH=$HOME/.local/bin:$PATH
+if [[ -e /home/linuxbrew ]]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 eval "$(oh-my-posh init zsh --config $HOME/.config/ohmyposh/zen.toml)"
 
 # key-bindings
@@ -69,7 +72,11 @@ source ~/.config/aliases/setup
 
 # Completion styling
 #
-source /usr/share/fzf/key-bindings.zsh
+if [ -e /usr/share/fzf/shell/ ]; then
+    source /usr/share/fzf/shell/key-bindings.zsh
+else
+    source /usr/share/fzf/key-bindings.zsh
+fi
 eval "$(zoxide init --cmd cd zsh)"
 export SUDO_ASKPASS='/usr/lib/ssh/x11-ssh-askpass'
 
