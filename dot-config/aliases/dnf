@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-alias dnfs="dnf search"
-alias dnfsi="dnf list --installed | grep"
-alias dnfl="dnf list"
-alias dnfi="sudo dnf install"
-alias dnfr="sudo dnf remove"
-alias dnfu="sudo dnf upgrade"
-alias dnfur="sudo dnf upgrade --refresh"
-alias dnfury="sudo dnf upgrade --refresh -y"
-alias si=dnfsi
-alias uy=dnfury
+cmd="dnf"
+scmd="sudo $cmd"
 
-u=dnfur
-i=dnfi
-r=dnfr
-s=dnfs
+alias si="$cmd list --installed | grep"
+
+u="$scmd upgrade --refresh"
+i="$scmd install"
+r="$scmd remove"
+s="$cmd search"
+unset cmd
+unset scmd
