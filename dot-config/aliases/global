@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+alias c="clear"
+alias l="ls -lAh"
+alias_exists cat bat
+alias_exists ls eza --color
+alias_exists z zoxide query
+alias_exists compress xargs -P0 -I % tar -czf %.tar.gz %

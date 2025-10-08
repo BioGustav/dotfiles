@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+cmd="pacman"
+scmd="sudo $cmd"
+
+alias_exists yay paru
+
+if exists yay; then
+    cmd="yay"
+    scmd=$cmd
+fi
+
+i="$scmd -S"
+s="$cmd -Ss"
+r="$scmd -Rcnsu"
+u="$scmd -Suy"
+unset cmd
+unset scmd
+
+alias yeet="$r"

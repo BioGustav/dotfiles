@@ -65,10 +65,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-if [[ -e ~/.config/aliases ]]; then
-  source ~/.config/aliases
-fi
-
+source ~/.config/aliases/setup
 
 # Completion styling
 #

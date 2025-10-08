@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+alias dnfs="dnf search"
+alias dnfsi="dnf list --installed | grep"
+alias dnfl="dnf list"
+alias dnfi="sudo dnf install"
+alias dnfr="sudo dnf remove"
+alias dnfu="sudo dnf upgrade"
+alias dnfur="sudo dnf upgrade --refresh"
+alias dnfury="sudo dnf upgrade --refresh -y"
+alias si=dnfsi
+alias uy=dnfury
+
+u=dnfur
+i=dnfi
+r=dnfr
+s=dnfs

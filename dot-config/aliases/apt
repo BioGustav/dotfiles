@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+cmd="apt"
+scmd="sudo $cmd"
+
+alias_exists apt nala
+
+i="$scmd install"
+s="$cmd search"
+r="$scmd remove"
+u="$scmd upgrade"

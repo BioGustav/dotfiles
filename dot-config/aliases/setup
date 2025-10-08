@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+
+exists () {
+    command -v $1 >/dev/null 2>&1
+}
+
+alias_exists () {
+    if exists $2; then
+        alias $1="${*:2}"
+    fi
+}
+
+# global aliases
+source ~/.config/aliases/global
+
+# special aliases
+if exists pacman; then # arch based
+    source ~/.config/aliases/arch
+elif exists dnf; then # fedora/rhel
+    source ~/.config/aliases/dnf
+elif exists apt; then # debian/ubuntu based
+    source ~/.config/aliases/apt
+else
+    echo "There are no special aliases defined for your distribution."
+    unset -f exists
+    unset -f alias_exists
+    exit 1
+fi
+
+if exists flatpak; then
+    u="${u}; flatpak update"
+fi
+
+if exists brew; then
+    u="${u}; brew upgrade"
+fi
+
+alias i="$i"
+alias s="$s"
+alias u="$u"
+alias r="$r"
+
+unset i
+unset u
+unset r
+unset s
+unset -f exists
+unset -f alias_exists
