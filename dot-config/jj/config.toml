@@ -5,7 +5,7 @@ name = "BioGustav"
 email = "65023470+BioGustav@users.noreply.github.com"
 
 [ui]
-default-command = ["log", "--reversed"]
+default-command = "log" #["log" , "--reversed"]
 editor = "nvim"
 
 [signing]
