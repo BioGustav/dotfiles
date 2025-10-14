@@ -1,9 +1,0 @@
-{
-    "workbench.activityBar.location": "bottom",
-    "terminal.integrated.defaultProfile.linux": "zsh",
-    "telemetry.feedback.enabled": false,
-    "editor.fontFamily": "RobotoMono Nerd Font Mono",
-    "extensions.experimental.affinity": {
-        "asvetliakov.vscode-neovim": 1
-    }
-}
